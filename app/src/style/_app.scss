@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	background-color: $dark-blue;
+	justify-content: center;
+
+	&--redux, &--world {
+		align-self: center;
+		font-family: $font-spectral;
+		font-weight: 500;
+		letter-spacing: 10px;
+		font-size: 28px;
+	}
+	&--redux {
+		color: $light-green;
+	}
+	&--world {
+		color: $light-gray;
+	}
+}
