@@ -460,15 +460,14 @@ describe('Contactos - Acciones', () => {
 
 			expect(actual).toEqual(esperado);
 		});
-		it('borrarContactoCompletado(uid, index) retorna el objecto esperado.', () => {
+		it('borrarContactoCompletado(index) retorna el objecto esperado.', () => {
 			const uid = 'asda!E3-##@$#@$#-DSFdsfs',
 				index = 100;
 
-			const actual = ACCIONES.borrarContactoCompletado(uid, index);
+			const actual = ACCIONES.borrarContactoCompletado(index);
 			const esperado = {
 				type: CONSTANTES_CONTACTO.BORRAR_CONTACTO.COMPLETADO,
 				payload: {
-					uid,
 					index,
 					cargando: false,
 					error: '',
@@ -527,7 +526,6 @@ describe('Contactos - Acciones', () => {
 							cargando: false,
 							error: '',
 							index: 0,
-							uid,
 						},
 					}];
 

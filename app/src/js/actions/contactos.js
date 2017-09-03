@@ -195,11 +195,10 @@ export function borrarContactoInicio() {
 	};
 }
 
-export function borrarContactoCompletado(uid, index) {
+export function borrarContactoCompletado(index) {
 	return {
 		type: CONSTANTES.BORRAR_CONTACTO.COMPLETADO,
 		payload: {
-			uid,
 			index,
 			cargando: false,
 			error: '',
@@ -230,7 +229,7 @@ export function borrarContacto(uid) {
 		}
 
 		return axios.delete(`${apiUrl}/contactos/${uid}`)
-			.then(({ uid }) => dispatch(borrarContactoCompletado(uid, index)))
+			.then(({ uid }) => dispatch(borrarContactoCompletado(index)))
 			.catch((error) => {
 				const mensaje = error.message || error;
 				dispatch(borrarContactoError(mensaje));
